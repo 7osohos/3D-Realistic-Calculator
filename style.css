@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+body{
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+    --accent:#507687;
+    --alt-accent:#384B70;
+    /* background:linear-gradient(wheat , white); */
+    background-color: #FCFAEE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+.main-body{
+    background-color: var(--accent);
+    width: 400px;
+    height: 600px;
+    border-radius: 5%;
+    padding: 20px;
+    box-shadow:-30px 0 0 30px var(--alt-accent),inset 0px -0px 20px rgba(0, 0, 0, 0.644);;
+    /* box-shadow: inset 0 0 20px black; */
+    transform: skew(0deg, -10deg);
+    /* transform-origin: bottom left; */
+}
+.back-shad1ow{
+    position: absolute;
+    background-color: var(--alt-accent);
+    width: 450px;
+    height: 650px;
+    border-radius: 3%;
+    padding: 20px;
+    /* transform: ; */
+    box-shadow:inset 0px -0px 30px black;;
+    /* box-shadow: inset 0 0 20px black; */
+    transform: skew(0deg, -10deg)translate(-6% , -5%);
+    
+}
+.shadow{
+    /* content: ''; */
+    transform: skew(0deg, -10deg) translateX(-10%);
+    width: 400px;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.623);
+    position: absolute;
+    /* top: 0; */
+    bottom: 100px;
+    /* left: 190px; */
+    filter: blur(40px);
+    /* z-index: -1; */
+}
+.screenContainer{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(64, 97, 64);
+    box-shadow: inset 0 0 10px black;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+.screen{
+    width: 100%;
+    height: 100px;
+    box-shadow: inset 0 0 10px black;
+    border-radius: 20px;
+    padding: 20px;
+    font-family: "Jersey 10", sans-serif;
+    font-size: 70px;
+    /* text-shadow: 0 0 6px rgb(48, 48, 48); */
+    line-height: 70px;
+    color: rgb(66, 66, 66);
+    text-align: end;
+    /* display: none; */
+    transition: 0.5s;
+    opacity: 0;
+    overflow: hidden;
+    /* background-color: rgb(100, 155, 100); */
+}
+.screenContainer.on{
+    background-color: rgb(111, 167, 111);
+    box-shadow: 0 0 20px rgb(111, 167, 111);
+    filter: drop-shadow(0 0 20px rgb(111,167,111));
+}
+.screenContainer.on .screen{
+    display: block;
+    opacity: 1;
+    transition: 0s;
+
+}
+.buttons{
+    /* background-color: rgba(0, 255, 106, 0.534); */
+    height: calc(100% - 100px);
+    display: grid;
+    padding: 20px;
+    padding-right: 0;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(5,1fr);
+    gap:  20px;
+}
+.buttons span{
+    border-radius: 8px;
+    background:linear-gradient(90deg,#9CA986,#C9DABF);
+    box-shadow: -5px -5px 0 5px #C9DABF, 0px 10px 20px -2px rgba(0, 0, 0, 0.685);
+    font-size: 40px;
+    text-align: center;
+    line-height: 70px;
+    color: rgb(82, 82, 82);
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+}
+
+span i {
+    font-size: 30px;
+    pointer-events: none;
+}
+.buttons span:after{
+    content: '';
+    width: 60px;
+    height: 10px;
+    left: 0;
+    bottom: -10px;
+    filter: blur(5px);
+    position: absolute;
+    /* background-color: rgba(0, 0, 0, 0.699); */
+}
+
+.buttons span#clear{
+    background: #ee4848;
+    box-shadow: -5px -5px 0 5px #aa5959 ,  0px 10px 20px -2px rgba(0, 0, 0, 0.685);
+color: white;
+}
+.buttons span#equal{
+    background: #39be4f;
+    box-shadow: -5px -5px 0 5px #43a067 ,  0px 10px 20px -2px rgba(0, 0, 0, 0.685);
+color: white;
+}
+.buttons span#power{
+    background: #e4e4e4;
+    box-shadow: -5px -5px 0 5px #b3b1b1 ,  0px 10px 20px -2px rgba(0, 0, 0, 0.685);
+    color: rgb(51, 161, 56);
+}
+#plus{
+    grid-column: 4/5;
+    grid-row: 4/6;
+    line-height: 150px;
+}
+
+span#dot i{
+    font-size: 10px ;
+    /* color: #39be4f; */
+    /* background-color: red; */
+}
+span#dot {
+    line-height: 50px
+}
+span:active{
+    border-radius: 8px;
+    box-shadow: inset 0 0 4px 2px rgba(0, 0, 0, 0.795) !important;
+    /* box-shadow: none; */
+    background: #9CA986;
+    transform: translate(-5px ,-5px);
+}
+@media (max-width:700px){
+    .main-body{
+        scale: 0.6;
+    }
+}
